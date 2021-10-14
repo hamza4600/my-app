@@ -15,16 +15,34 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: fixed;
+  top: 0;
+  margin: 0%;
+  width: 100%;
+  height: 50px;
+  
 }
-
-.App-link {
+.App-header ul{
+ display: flex;
+ flex-direction: row;
+ /* margin: 20px; */
+ top: 0px;
+}
+.App-header li{
+  list-style-type: none;
+ margin: 10px;
+ background: rgb(0, 0, 0);
+ border-radius: 6px;
+ top: 0%;
+}
+.App Link {
   color: #61dafb;
 }
 
@@ -36,3 +54,5 @@
     transform: rotate(360deg);
   }
 }
+
+ 

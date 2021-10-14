@@ -1,24 +1,61 @@
-import logo from './logo.svg';
+ 
 import './App.css';
+import Cake from './componenet/cake';
+import {ReduxOne,  storex } from './componenet/redux/main';
+import { Provider } from 'react-redux';
+import SelectorHook from './componenet/redux/selectorHook';
+import OneHook from './componenet/Hooks/stateHook';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Mainx from './componenet/Hooks/main';
+import cake from './componenet/cake';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <Provider store={storex} >
+
+    <div className={"App"}>
+      <nav className={"App-header"}>
+        <ul className={''}>
+          <li className={""}>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/redux/main">Redux</Link>
+          </li>
+          <li>
+            <Link to="/Hooks/main">Hooks</Link>
+          </li>
+        </ul>
+      </nav>
+
+      {/* A <Switch> looks through its children <Route>s and
+          renders the first one that matches the current URL. */}
+      <Switch>
+        <Route path="/Hooks/main">
+          <Mainx />
+          {/* <OneHook/> */}
+        </Route>
+        <Route path="/redux/main">
+          <ReduxOne />
+          <Cake/>
+          <SelectorHook/>
+
+        </Route>
+        <Route path="/">
+          {/* <Home /> */}
+        </Route>
+      </Switch>
     </div>
+    </Provider>
+    </Router>
   );
 }
 
