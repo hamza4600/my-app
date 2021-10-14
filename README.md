@@ -10,7 +10,7 @@ In the project directory, you can run:
  
 ## Installation :wrench:
 
-First you need to clone the project using `git clone https://github.com/leoronne/twitter-ui-clone.git`.
+First you need to clone the project using ` https://github.com/hamza4600/my-app`.
 
 You can install the application using `npm install` or `yarn install` on the root dir.
 
